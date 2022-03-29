@@ -7,21 +7,39 @@
     <h1>INTENTION TIMER</h1>
   </header>
   <main>
-    <article>
+    <article class="activity-card-article">
         <h2>New Activity</h2>
-        <section>
-          <p>Select a Category</p>
-          <div>
-            <button>Study</button>
-            <button>Meditate</button>
-            <button>Exercise</button>
+        <section ="activity-card">
+          <p class="card-text">Select a Category</p>
+          <div class="activity-button-container">
+            <button class="activity-button study-button">
+            <img class="icon study-icon" src="assets/study.svg" alt="light off"/>
+            <img class="icon study-icon-active hide" src="assets/study-active.svg" alt="light on"/>
+              Study
+            </button>
+            <button class="activity-button meditate-button">
+            <img class="icon meditate-icon" src="assets/meditate.svg" alt="flower off"/>
+            <img class="icon meditate-icon-active hide" src="assets/meditate-active.svg" alt="flower on"/>
+              Meditate
+            </button>
+            <button class="activity-button exercise-button">
+            <img class="icon exercise-icon" src="assets/exercise.svg" alt="shoe off"/>
+            <img class="icon exercise-icon-active hide" src="assets/exercise-active.svg" alt="shoe on"/>
+              Exercise
+            </button>
           </div>
-            <p>Select Category</p>
+            <p class="alert-unselected activity hide">
+            <img class="alert-unselected-activity alert-icon icon hide" src="assets/warning.svg" alt="alert"/>
+              Select Category
+            </p>
           <form>
-            <label>What would you like to accomplish during this time?</label>
-            <input type="text"/>
-            <label>A description is required</label>
-            <button>START ACTIVITY</button>
+            <label class="intention-question">What would you like to accomplish during this time?</label>
+            <input type="text" class="intention-answer input"/>
+            <label class="alert-empty-text hide">
+            <img class="alert-empty-icon alert-icon" src="assets/warning.svg" alt="alert"/>
+              A description is required
+            </label>
+            <button class="start-activity-button">START ACTIVITY</button>
           </form>
         </section>
     </article>
