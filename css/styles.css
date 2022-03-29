@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 100%;
+}
+
+body {
+  background-color: #2B2733;
+  min-width: 230px;
+}
+
+button {
+  box-shadow: none;
+  outline: none;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+header {
+  background-color: #46424D;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: .8em;
+  text-align: center;
+}
+
+h2 {
+  color: #CBC9CF;
+  margin-left: 1em;
+}
+
+section {
+  background-color: #46424D;
+  border-radius: .5em;
+  box-shadow: 20px 20px 50px 10px #26222D;
+  height: 640px;
+  margin: 1em;
+  margin-bottom: 1.5em;
+  padding: 2em 2em 1em 2em;
+}
+
+.card-text {
+  color: #FFF;
+}
+
+.activity-button {
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  border-radius: .2em;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  height: 80px;
+  justify-content: center;
+  width: 150px;
+}
+
+input {
+  box-shadow: none;
+  outline: none;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-gap: 1em;
+  grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  justify-content: center;
+  justify-content: space-between;
+}
+
+form {
+  color: #CBC9CF;
+  column-gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  grid-template-rows:  repeat(7, 1fr);
+  margin: 10px;
+  row-gap: .5em;
+}
+
+.alert-icon {
+  height: 12px;
+  margin: 2px 5px 5px 3px;
+  width: 12px;
+}
+
+.alert-unselected-activity{
+ color: #EFB7EC;
+ text-align: center;
+}
+
+.alert-empty-text {
+  color: #EFB7EC;
+  display: flex;
+  font-size: 13px;
+  grid-area: 4 / 1 / 5 / 3;
+  width: 200px;
+}
+
+.intention-question {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.intention-answer{
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.start-activity-button {
+  grid-area: 8 / 2 / 9 / 3;
+  height: 2.4em;
+  justify-self: end;
+  width: 15em;
+}
+
+.input {
+  background-color: transparent;
+  border-style: none;
+  border-bottom: 2px solid #CBC9CF;
+  color: #CBC9CF;
+  font-size: 1.2em;
+  margin-bottom: .4em;
+}
+
+p {
+  color: #CBC9CF;
+  font-size: .8em;
+}
+
+main {
+  display: grid;
+}
+
+.activity-card-article {
+  grid-area: 1/ 1 / 1 / 2;
+}
+
+.hide {
+  display: none;
+}
