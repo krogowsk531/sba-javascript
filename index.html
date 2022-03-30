@@ -8,7 +8,7 @@
     <h1>INTENTION TIMER</h1>
   </header>
   <main>
-    <article class="activity-card-article">
+    <!-- <article class="activity-card-article">
         <h2>New Activity</h2>
         <section ="activity-card">
           <p class="card-text">Select a Category</p>
@@ -40,9 +40,32 @@
             <img class="alert-empty-icon alert-icon" src="assets/warning.svg" alt="alert"/>
               A description is required
             </label> -->
-            <button class="start-activity-button">START ACTIVITY</button>
+            <!-- <button class="start-activity-button">START ACTIVITY</button>
           </form>
         </section>
+    </article> -->
+    <article class="timer-card-article">
+      <h2>Current Activity</h2>
+      <section class="timer-card">
+        <div class="user-input">
+          <h3 class="user-intention">Deep Breathing</h3>
+          <label class="minutes">Minutes</label>
+          <input maxlength="2" class="minutes-input input" type="text"/>
+          <label class="alert-empty-minutes alert-text-2 alert-empty-text hide">
+          <img class="alert-empty-minutes alert-icon" src="assets/warning.svg" alt="alert">
+            Required
+          </label>
+          <label class="seconds">Seconds</label>
+          <input maxlength="2" class="seconds-input input" type="text"/>
+          <label class="alert-empty-seconds alert-text-3 alert-empty-text hide">
+          <img class="alert-empty-seconds alert-icon" src="assets/warning.svg" alt="alert"/>
+            Required
+          </label>
+          <p class="timer-text"><span class="minutes-text">05</span>:<span class="seconds-text">00</span</p>
+        </div>
+        <button class="timer-button">START</button>
+        <button class="log-activity-button">LOG ACTIVITY</button>
+      </section>
     </article>
   </main>
   <script src="src/activity.js"></script>
