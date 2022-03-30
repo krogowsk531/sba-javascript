@@ -149,3 +149,18 @@ main {
 .hide {
   display: none;
 }
+
+.green {
+  border: 2px solid #B3FD78;
+  color: #B3FD78;
+}
+
+.purple {
+  border: 2px solid #C278FD;
+  color: #C278FD;
+}
+
+.red {
+  border: 2px solid #FD8078;
+  color: #FD8078;
+}
