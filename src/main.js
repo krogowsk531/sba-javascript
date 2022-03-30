@@ -9,10 +9,14 @@ let meditateIconActive = document.querySelector('.meditate-icon-active');
 let exerciseButton = document.querySelector('.exercise-button');
 let exerciseIcon = document.querySelector('.exercise-icon');
 let exerciseIconActive = document.querySelector('.exercise-icon-active');
+// let intentionInformation = document.querySelector('.intention-answer');
 let selectedCategory;
 let tagColor;
 
 activityButtonContainer.addEventListener('click', activityButton);
+
+// addIntentionAlert();
+// iconAlert();
 
 function activityButton(e) {
   if (e.target.classList.contains('study-button')) {
@@ -46,8 +50,6 @@ function selectMeditateButton() {
   unselectExercise();
 };
 
-
-
 function selectExerciseButton() {
   selectedCategory = 'Exercise';
   tagColor = 'red';
@@ -57,6 +59,12 @@ function selectExerciseButton() {
   exerciseIconActive.classList.toggle('hide');
   unselectMeditate();
   unselectStudy();
+};
+
+function unselectStudy() {
+  studyIconActive.classList.add('hide');
+  studyIcon.classList.remove('hide');
+  studyButton.classList.remove('green');
 };
 
 function unselectMeditate() {
@@ -71,26 +79,20 @@ function unselectExercise() {
   exerciseButton.classList.remove('red');
 }
 
-function unselectStudy() {
-  studyIconActive.classList.add('hide');
-  studyIcon.classList.remove('hide');
-  studyButton.classList.remove('green');
-};
+// function iconAlert() {
+//   let alertUnselectedActivity = document.querySelector('.alert-unselected-activity');
+//   if (selectedCategory === undefined) {
+//     alertUnselectedActivity.classList.remove('hide');
+//   } else {
+//     alertUnselectedActivity.classList.add('hide');
+//   }
+// };
 
-function iconAlert() {
-  var alertUnselectedActivity = document.querySelector('.alert-unselected-activity');
-  if (selectedCategory === undefined) {
-    alertUnselectedActivity.classList.remove('hide');
-  } else {
-    alertUnselectedActivity.classList.add('hide');
-  }
-};
-
-function addIntentionAlert() {
-  var alertEmptyText = document.querySelector('.alert-empty-text');
-  if (intentionInformation.value.length === 0) {
-    alertEmptyText.classList.remove('hide');
-  } else {
-    alertEmptyText.classList.add('hide');
-  }
-};
+// function addIntentionAlert() {
+//   let alertEmptyText = document.querySelector('.alert-empty-text');
+//   if (intentionInformation.value.length === 0) {
+//     alertEmptyText.classList.remove('hide');
+//   } else {
+//     alertEmptyText.classList.add('hide');
+//   }
+// };
