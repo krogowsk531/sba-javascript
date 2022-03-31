@@ -9,14 +9,14 @@ let meditateIconActive = document.querySelector('.meditate-icon-active');
 let exerciseButton = document.querySelector('.exercise-button');
 let exerciseIcon = document.querySelector('.exercise-icon');
 let exerciseIconActive = document.querySelector('.exercise-icon-active');
-// let intentionInformation = document.querySelector('.intention-answer');
+let intentionInformation = document.querySelector('.intention-answer');
 let selectedCategory;
 let tagColor;
 
 activityButtonContainer.addEventListener('click', activityButton);
 
-// addIntentionAlert();
-// iconAlert();
+addIntentionAlert();
+iconAlert();
 
 function activityButton(e) {
   if (e.target.classList.contains('study-button')) {
@@ -79,20 +79,20 @@ function unselectExercise() {
   exerciseButton.classList.remove('red');
 }
 
-// function iconAlert() {
-//   let alertUnselectedActivity = document.querySelector('.alert-unselected-activity');
-//   if (selectedCategory === undefined) {
-//     alertUnselectedActivity.classList.remove('hide');
-//   } else {
-//     alertUnselectedActivity.classList.add('hide');
-//   }
-// };
+function iconAlert() {
+  let alertUnselectedActivity = document.querySelector('.alert-unselected-activity');
+  if (selectedCategory === undefined) {
+    alertUnselectedActivity.classList.remove('hide');
+  } else {
+    alertUnselectedActivity.classList.add('hide');
+  }
+};
 
-// function addIntentionAlert() {
-//   let alertEmptyText = document.querySelector('.alert-empty-text');
-//   if (intentionInformation.value.length === 0) {
-//     alertEmptyText.classList.remove('hide');
-//   } else {
-//     alertEmptyText.classList.add('hide');
-//   }
-// };
+function addIntentionAlert() {
+  let alertEmptyText = document.querySelector('.alert-empty-text');
+  if (intentionInformation.value.length === 0) {
+    alertEmptyText.classList.remove('hide');
+  } else {
+    alertEmptyText.classList.add('hide');
+  }
+};

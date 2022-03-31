@@ -164,3 +164,87 @@ main {
   border: 2px solid #FD8078;
   color: #FD8078;
 }
+
+.timer-card {
+  align-items: center;
+  background-color: #46424D;
+  border-radius: 4px;
+  border-radius: .5em;
+  box-shadow: 20px 20px 50px 10px #26222D;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  font-size: 20px;
+  height: 600px;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.timer-button {
+  background-color: #46424D;
+  border-radius: 50%;
+  cursor: pointer;
+  float: none;
+  font-size: 25px;
+  height: 200px;
+  width: 200px;
+}
+
+.green-circle {
+  border: 1px solid #B3FD78;
+  color: #FFF;
+}
+
+.purple-circle {
+  border: 1px solid #C278FD;
+  color: #FFF;
+}
+
+.timer-text {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 75px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.log-activity-button {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  float: none;
+  grid-area: 5 / 2 / 6 / 3;
+  height: 2.4em;
+  justify-self: end;
+  margin: 40px auto 0px auto;
+  width: 15em;
+}
+
+.alert-empty-minutes{
+  align-self: start;
+  grid-area: 7 / 1 / 8 / 2;
+  justify-self: start;
+}
+
+.minutes {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+.minutes-input{
+  grid-area: 6 / 1 / 7 / 2;
+}
+
+.alert-empty-seconds{
+  align-self: start;
+  grid-area: 7 / 2 / 8 / 3;
+  justify-self: start;
+}
+
+.seconds {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+.seconds-input {
+  grid-area: 6 / 2 / 7 / 3;
+}
