@@ -248,3 +248,12 @@ main {
 .seconds-input {
   grid-area: 6 / 2 / 7 / 3;
 }
+
+h3 {
+  color: #FFF;
+  font-size: 1.5em;
+  margin: 0;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
