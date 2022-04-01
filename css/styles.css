@@ -70,6 +70,26 @@ input {
   outline: none;
 }
 
+.green {
+  border: 2px solid #B3FD78;
+  color: #B3FD78;
+}
+
+.purple {
+  border: 2px solid #C278FD;
+  color: #C278FD;
+}
+
+.red {
+  border: 2px solid #FD8078;
+  color: #FD8078;
+}
+
+.red-circle {
+  border: 2px solid #FD8078;
+  color: #FFF;
+}
+
 div {
   display: flex;
   flex-direction: row;
@@ -109,12 +129,52 @@ form {
   width: 200px;
 }
 
+.alert-text-2{
+  font-size: 13px;
+  grid-area: 7 / 1 / 8 / 2;
+  padding-left: 20px;
+}
+
+.alert-text-3{
+  font-size: 13px;
+  grid-area: 7 / 2 / 8 / 3;
+  padding-left: 20px;
+}
+
+.alert-empty-minutes{
+  align-self: start;
+  grid-area: 7 / 1 / 8 / 2;
+  justify-self: start;
+}
+
+.alert-empty-seconds{
+  align-self: start;
+  grid-area: 7 / 2 / 8 / 3;
+  justify-self: start;
+}
+
 .intention-question {
   grid-area: 2 / 1 / 3 / 3;
 }
 
 .intention-answer{
   grid-area: 3 / 1 / 4 / 3;
+}
+
+.minutes {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+.seconds {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+.minutes-input{
+  grid-area: 6 / 1 / 7 / 2;
+}
+
+.seconds-input {
+  grid-area: 6 / 2 / 7 / 3;
 }
 
 .start-activity-button {
@@ -140,29 +200,75 @@ p {
 
 main {
   display: grid;
+  grid-template-columns: 65% 35%;
+  grid-row: 100%;
 }
 
 .activity-card-article {
   grid-area: 1/ 1 / 1 / 2;
 }
 
+aside {
+  border-left: 2px solid #46424D;
+  grid-column: 1 /2 / 1/ 3;
+}
+
+h3 {
+  color: #FFF;
+  font-size: 1.5em;
+  margin: 0;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.no-activities-message {
+  font-size: .8em;
+  line-height: 2em;
+  margin: 0 50px 0 50px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .hide {
   display: none;
 }
 
-.green {
-  border: 2px solid #B3FD78;
-  color: #B3FD78;
+.past-activity-card {
+  background-color: #46424D;
+  border-radius: .5em;
+  display: grid;
+  grid-template-columns: 98% 2%;
+  margin: .2em 1em .2em 1em;
+  overflow: auto;
+  padding: 1em;
+  white-space: nowrap;
 }
 
-.purple {
-  border: 2px solid #C278FD;
-  color: #C278FD;
+.activity-color-tag {
+  border-radius: .1em;
+  display: flex;
+  grid-area: 1 / 2 / 3 / 3;
+  height: 2em;
+  justify-self: end;
+  width: .2em;
 }
 
-.red {
-  border: 2px solid #FD8078;
-  color: #FD8078;
+.past-activity {
+  font-weight: bold;
+  margin: 0;
+}
+
+.past-time {
+  margin: 0;
+}
+
+.past-intention {
+  margin: 5px 0 5px 0;
 }
 
 .timer-card {
@@ -221,39 +327,17 @@ main {
   width: 15em;
 }
 
-.alert-empty-minutes{
-  align-self: start;
-  grid-area: 7 / 1 / 8 / 2;
-  justify-self: start;
-}
-
-.minutes {
-  grid-area: 5 / 1 / 6 / 2;
-}
-
-.minutes-input{
-  grid-area: 6 / 1 / 7 / 2;
-}
-
-.alert-empty-seconds{
-  align-self: start;
-  grid-area: 7 / 2 / 8 / 3;
-  justify-self: start;
-}
-
-.seconds {
+.new-activity-button {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border-radius: .5em;
+  cursor: pointer;
+  display: flex;
   grid-area: 5 / 2 / 6 / 3;
-}
-
-.seconds-input {
-  grid-area: 6 / 2 / 7 / 3;
-}
-
-h3 {
-  color: #FFF;
-  font-size: 1.5em;
-  margin: 0;
-  overflow: auto;
-  white-space: nowrap;
-  width: 100%;
+  height: 2.4em;
+  justify-content: center;
+  margin: 20px auto 0px auto;
+  text-align: center;
+  width: 400px;
 }

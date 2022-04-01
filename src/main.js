@@ -28,10 +28,8 @@ let tagColor;
 activityButtonContainer.addEventListener('click', activityButton);
 startActivityButton.addEventListener('click', startActivity);
 timerButton.addEventListener('click', timerStart);
+logActivityButton.addEventListener('click', logActivity);
 newActivityButton.addEventListener('click', returnHome);
-minutesNumberOnly.addEventListener('keypress', numbersOnlyMinutes);
-secondsNumberOnly.addEventListener('keypress', numbersOnlySeconds);
-
 
 window.onload = retrieveFromStorage();
 window.onload = displayPastActivities();
@@ -39,10 +37,6 @@ window.onload = displayPastActivities();
 function startActivity(event) {
   event.preventDefault();
   storeInformation();
-  // addIntentionAlert();
-  // addMinuteAlert();
-  // addSecondAlert();
-  // iconAlert();
   allowDisplayTimerCard();
   logActivityButton.disabled = true;
 };
@@ -114,42 +108,6 @@ function unselectExercise() {
   timerButton.classList.remove('red-circle');
 };
 
-// function iconAlert() {
-//   let alertUnselectedActivity = document.querySelector('.alert-unselected-activity');
-//   if (selectedCategory === undefined) {
-//     alertUnselectedActivity.classList.remove('hide');
-//   } else {
-//     alertUnselectedActivity.classList.add('hide');
-//   }
-// };
-//
-// function addIntentionAlert() {
-//   let alertEmptyText = document.querySelector('.alert-empty-text');
-//   if (intentionInformation.value.length === 0) {
-//     alertEmptyText.classList.remove('hide');
-//   } else {
-//     alertEmptyText.classList.add('hide');
-//   }
-// };
-
-// function addMinuteAlert() {
-//   let alertEmptyMinutes = document.querySelector('.alert-empty-minutes');
-//   if (minutesNumberOnly.value.length === 0) {
-//     alertEmptyMinutes.classList.remove('hide');
-//   } else {
-//     alertEmptyMinutes.classList.add('hide');
-//   }
-// };
-//
-// function addSecondAlert() {
-//   let alertEmptySeconds = document.querySelector('.alert-empty-seconds');
-//   if (secondsNumberOnly.value.length === 0) {
-//     alertEmptySeconds.classList.remove('hide');
-//   } else {
-//     alertEmptySeconds.classList.add('hide');
-//   }
-// };
-
 function displayTimerCard() {
   timerCard.classList.remove('hide');
   activityCard.classList.add('hide');
@@ -164,8 +122,11 @@ function allowDisplayTimerCard() {
 };
 
 function storeInformation() {
+  if ((selectedCategory !== undefined) && (intentionInformation.value.length > 0) && (minutesNumberOnly.value.length > 0) && (secondsNumberOnly.value.length > 0)) {
     let activityInstance = new Activity (selectedCategory, intentionInformation.value, minutesNumberOnly.value, secondsNumberOnly.value, tagColor);
     activityInformation.unshift(activityInstance);
+    activityInformation[0].saveToStorage();
+  }
 };
 
 function timerStart() {
@@ -196,6 +157,30 @@ function timerComplete() {
 function displayPastActivities() {
   let noActivitiesMessage = document.querySelector('.no-activities-message');
   let cardContainer = document.querySelector('.card-container');
+  noActivitiesMessage.classList.add('hide');
+  cardContainer.classList.remove('hide');
+  cardContainer.innerHTML = '';
+  for (let i = 0; i < activityInformation.length; i++) {
+    cardContainer.innerHTML += `
+    <article class='past-activity-card'>
+    <p class='past-activity'>${activityInformation[i].category}</p>
+    <p class='past-time'><span>${activityInformation[i].minutes} </span>MIN<span> ${activityInformation[i].seconds} </span>SECONDS</p>
+    <p class='past-intention'>${activityInformation[i].description}</p>
+    <div class='activity-color-tag ${activityInformation[i].tagColor}'></div>
+    </article>
+    `;
+  }
+};
+
+function logActivity() {
+  displayPastActivities();
+  timerCard.classList.add('hide');
+  completedActivity.classList.remove('hide');
+  timerButton.disabled = false;
+};
+
+function retrieveFromStorage() {
+  activityInformation = JSON.parse(localStorage.getItem('activityInformation')) || [];
 };
 
 function clearForm() {

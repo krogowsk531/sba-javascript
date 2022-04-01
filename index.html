@@ -1,85 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap">
+  <title>Intention Timer</title>
 </head>
 <body>
   <header>
     <h1>INTENTION TIMER</h1>
   </header>
   <main>
-    <article class="activity-card-article">
-        <h2>New Activity</h2>
-        <section ="activity-card">
-          <p class="card-text">Select a Category</p>
-          <div class="activity-button-container">
-            <button class="activity-button study-button">
-            <img class="icon study-icon" src="assets/study.svg" alt="light off"/>
-            <img class="icon study-icon-active hide" src="assets/study-active.svg" alt="light on"/>
-              Study
-            </button>
-            <button class="activity-button meditate-button">
-            <img class="icon meditate-icon" src="assets/meditate.svg" alt="flower off"/>
-            <img class="icon meditate-icon-active hide" src="assets/meditate-active.svg" alt="flower on"/>
-              Meditate
-            </button>
-            <button class="activity-button exercise-button">
-            <img class="icon exercise-icon" src="assets/exercise.svg" alt="shoe off"/>
-            <img class="icon exercise-icon-active hide" src="assets/exercise-active.svg" alt="shoe on"/>
-              Exercise
-            </button>
-          </div>
-            <p class="alert-unselected activity hide">
-            <img class="alert-unselected-activity alert-icon icon hide" src="assets/warning.svg" alt="alert"/>
-              Select Category
-            </p>
-          <form>
-            <label class="intention-question">What would you like to accomplish during this time?</label>
-            <input type="text" class="intention-answer input"/>
-            <label class="alert-empty-text hide">
-            <img class="alert-empty-icon alert-icon" src="assets/warning.svg" alt="alert"/>
-              A description is required
-            </label>
-            <label class="minutes">Minutes</label>
-            <input maxlength="2" class="minutes-input input" type="text">
-            <label class="alert-empty-minutes alert-text-2 alert-empty-text hide">
-            <img class="alert-empty-minutes alert-icon" src="assets/warning.svg" alt="Alert Icon"/>
-              Required
-            </label>
-            <label class="seconds">Seconds</label>
-            <input maxlength="2" class="seconds-input input" type="text" >
-            <label class="alert-empty-seconds alert-text-3 alert-empty-text hide">
-            <img class="alert-empty-seconds alert-icon " src="assets/warning.svg" alt="Alert Icon"/>
-              Required
-            </label>
-            <button class="start-activity-button">START ACTIVITY</button>
-          </form>
-        </section>
+    <article class="display activity-card-article">
+      <h2>New Activity</h2>
+      <section ="activity-card">
+        <p class="card-text">Select a category</p>
+        <div class="activity-button-container">
+          <button class="activity-button study-button"><img class="icon study-icon" src="assets/study.svg" alt="Lightbulb Off"/><img class="icon study-icon-active hide" src="assets/study-active.svg" alt="Lightbulb On"/>Study</button>
+          <button class="activity-button meditate-button"><img class="icon meditate-icon" src="assets/meditate.svg" alt="Lotus Flower"/><img class="icon meditate-icon-active hide" src="assets/meditate-active.svg" alt="Lotus Flower On"/>Meditate</button>
+          <button class="activity-button exercise-button"><img class="icon exercise-icon" src="assets/exercise.svg" alt="Moving Shoe"/><img class="icon exercise-icon-active hide" src="assets/exercise-active.svg" alt="Moving Shoe On"/>Exercise</button>
+        </div>
+        <form>
+          <label class="intention-question">What would you like to accomplish during this time?</label>
+          <input type="text" class="intention-answer input">
+          <label class="minutes">Minutes</label>
+          <input maxlength="2" class="minutes-input input" type="text">
+          <label class="seconds">Seconds</label>
+          <input maxlength="2" class="seconds-input input" type="text" >
+          <button class="start-activity-button">START ACTIVITY</button>
+        </form>
+      </section>
     </article>
-    <article class="timer-card-article">
+    <article class="timer-card-article hide">
       <h2>Current Activity</h2>
       <section class="timer-card">
         <div class="user-input">
           <h3 class="user-intention">Deep Breathing</h3>
-          <br>
-          <label class="minutes hide">Minutes</label>
-          <input maxlength="2" class="minutes-input input hide" type="text"/>
-          <label class="alert-empty-minutes alert-text-2 alert-empty-text hide">
-          <img class="alert-empty-minutes alert-icon" src="assets/warning.svg" alt="alert">
-            Required
-          </label>
-          <label class="seconds hide">Seconds</label>
-          <input maxlength="2" class="seconds-input input hide" type="text"/>
-          <label class="alert-empty-seconds alert-text-3 alert-empty-text hide">
-          <img class="alert-empty-seconds alert-icon" src="assets/warning.svg" alt="alert"/>
-            Required
-          </label>
-          <p class="timer-text"><span class="minutes-text">05</span>:<span class="seconds-text">00</span</p>
+          <p class="timer-text"><span class="minutes-text">05</span>:<span class="seconds-text">00</span></p>
         </div>
         <button class="timer-button">START</button>
         <button class="log-activity-button">LOG ACTIVITY</button>
       </section>
     </article>
+    <article class="completed-activity hide">
+      <h2>Completed Activity</h2>
+      <section>
+        <button class="new-activity-button">CREATE A NEW ACTIVITY</button>
+      </section>
+    </article>
+  <aside>
+    <h2>Past Activities</h2>
+    <p class="no-activities-message">You haven't logged any activities yet.  Complete the form to the left to get started!</p>
+    <div class="card-container hide">
+      <article class="past-activity-card">
+        <div class="activity-color-tag"></div>
+      </article>
+    </div>
+  </aside>
   </main>
   <script src="src/activity.js"></script>
   <script src="src/main.js"></script>

@@ -27,4 +27,8 @@ class Activity {
     minutesText.innerText = `0`;
     timerButton.innerText = `WELL-DONE`;
   }
+
+  saveToStorage() {
+    localStorage.setItem('activityInformation', JSON.stringify(activityInformation));
+  }
 };
