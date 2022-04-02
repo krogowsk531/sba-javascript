@@ -361,3 +361,10 @@ h3 {
 .login-text {
   font-size: 1.5em;
 }
+
+.login-button {
+  grid-area: 8 / 2 / 9 / 3;
+  height: 2.4em;
+  justify-self: end;
+  width: 15em;
+}

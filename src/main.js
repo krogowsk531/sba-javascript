@@ -1,3 +1,5 @@
+let loginCard = document.querySelector('.login-card-article');
+let loginButton = document.querySelector('.login-button');
 let activityCard = document.querySelector('.activity-card-article');
 let activityButtonContainer = document.querySelector('.activity-button-container');
 let studyButton = document.querySelector('.study-button');
@@ -25,6 +27,7 @@ let activityInformation = [];
 let selectedCategory;
 let tagColor;
 
+loginButton.addEventListener('click', displayActivityCard);
 activityButtonContainer.addEventListener('click', activityButton);
 startActivityButton.addEventListener('click', startActivity);
 timerButton.addEventListener('click', timerStart);
@@ -107,6 +110,14 @@ function unselectExercise() {
   exerciseButton.classList.remove('red');
   timerButton.classList.remove('red-circle');
 };
+
+function displayActivityCard(event) {
+  console.log("HERE")
+  event.preventDefault();
+  activityCard.classList.remove('hide');
+  loginCard.classList.add('hide');
+
+}
 
 function displayTimerCard() {
   timerCard.classList.remove('hide');
@@ -193,6 +204,7 @@ function clearForm() {
 };
 
 function returnHome() {
+  console.log("HERE")
   completedActivity.classList.add('hide');
   activityCard.classList.remove('hide');
   timerButton.innerText = `START`;
