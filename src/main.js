@@ -24,6 +24,7 @@ let timerButton = document.querySelector('.timer-button');
 let logActivityButton = document.querySelector('.log-activity-button');
 let completedActivity = document.querySelector('.completed-activity');
 let newActivityButton = document.querySelector('.new-activity-button');
+let logoutButton = document.querySelector('.logout-button');
 let activityInformation = [];
 let selectedCategory;
 let tagColor;
@@ -34,6 +35,7 @@ startActivityButton.addEventListener('click', startActivity);
 timerButton.addEventListener('click', timerStart);
 logActivityButton.addEventListener('click', logActivity);
 newActivityButton.addEventListener('click', returnHome);
+logoutButton.addEventListener('click', logout);
 
 window.onload = retrieveFromStorage();
 window.onload = displayPastActivities();
@@ -210,3 +212,9 @@ function returnHome() {
   timerButton.innerText = `START`;
   clearForm();
 };
+
+function logout() {
+  completedActivity.classList.add('hide');
+  loginCard.classList.remove('hide');
+  pastActivitySection.classList.add('hide');
+}
