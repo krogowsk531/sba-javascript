@@ -27,7 +27,6 @@ let activityInformation = [];
 let selectedCategory;
 let tagColor;
 
-
 activityButtonContainer.addEventListener('click', activityButton);
 timerButton.addEventListener('click', timerStart);
 
@@ -113,8 +112,7 @@ function displayActivityCard(event) {
   activityCard.classList.remove('hide');
   loginCard.classList.add('hide');
   pastActivitySection.classList.remove('hide');
-
-}
+};
 
 function displayTimerCard() {
   timerCard.classList.remove('hide');
@@ -192,18 +190,18 @@ function retrieveFromStorage() {
 };
 
 function clearForm() {
-    intentionInformation.value = '';
-    minutesNumberOnly.value = '';
-    secondsNumberOnly.value = '';
-    unselectStudy();
-    unselectMeditate();
-    unselectExercise();
+  intentionInformation.value = '';
+  minutesNumberOnly.value = '';
+  secondsNumberOnly.value = '';
+  unselectStudy();
+  unselectMeditate();
+  unselectExercise();
 };
 
 function clearLogin() {
   emailAnswer.value = '';
   passwordAnswer.value = '';
-}
+};
 
 function returnHome() {
   completedActivity.classList.add('hide');
@@ -218,4 +216,4 @@ function logout() {
   pastActivitySection.classList.add('hide');
   clearLogin();
   clearForm();
-}
+};
