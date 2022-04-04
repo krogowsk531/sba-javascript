@@ -25,7 +25,7 @@ class Activity {
   markComplete() {
     secondsText.innerText = `0`;
     minutesText.innerText = `0`;
-    timerButton.innerText = `WELL-DONE`;
+    timerButton.innerText = `FINISHED`;
   }
 
   saveToStorage() {
