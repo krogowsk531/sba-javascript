@@ -16,10 +16,13 @@ let minutesNumberOnly = document.querySelector('.minutes-input');
 let secondsNumberOnly = document.querySelector('.seconds-input');
 let timerCard = document.querySelector('.timer-card-article');
 let userIntention = document.querySelector('.user-intention');
+let logActivityButton = document.querySelector('.log-activity-button');
 let minutesText = document.querySelector('.minutes-text');
 let secondsText = document.querySelector('.seconds-text');
 let timerButton = document.querySelector('.timer-button');
 let completedActivity = document.querySelector('.completed-activity');
+let emailAnswer = document.querySelector('.email-answer');
+let passwordAnswer = document.querySelector('.password-answer');
 let activityInformation = [];
 let selectedCategory;
 let tagColor;
@@ -197,6 +200,11 @@ function clearForm() {
     unselectExercise();
 };
 
+function clearLogin() {
+  emailAnswer.value = '';
+  passwordAnswer.value = '';
+}
+
 function returnHome() {
   completedActivity.classList.add('hide');
   activityCard.classList.remove('hide');
@@ -208,4 +216,5 @@ function logout() {
   completedActivity.classList.add('hide');
   loginCard.classList.remove('hide');
   pastActivitySection.classList.add('hide');
+  clearLogin();
 }
