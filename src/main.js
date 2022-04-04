@@ -217,4 +217,5 @@ function logout() {
   loginCard.classList.remove('hide');
   pastActivitySection.classList.add('hide');
   clearLogin();
+  clearForm();
 }
