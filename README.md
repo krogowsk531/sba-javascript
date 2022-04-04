@@ -6,3 +6,8 @@ This timer aims to have users live more intentionally while setting aside time f
 * HTML
 * CSS
 * Javascript
+* Local Storage
+
+#### In Action
+* `Git Clone` the Repository
+* Locally `open index.html` to run the project
