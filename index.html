@@ -5,6 +5,12 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap">
   <title>Intention Timer</title>
+  <style>
+    body {
+      background-color: #2B2733;
+      min-width: 230px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,13 +19,13 @@
   <main>
     <article class="login-card-article">
       <section class="login-card">
-        <p class="card-text login-text">Login</p>
+        <p style="font-size: 1.5em;" class="card-text login-text">Login</p>
         <form>
           <label class="login-email">Email</label>
           <input type="text" class="email-answer input">
           <label class="login-password">Password</label>
           <input type="text" class="password-answer input" pattern="[a-zA-Z0-9]+">
-          <button class="login-button">LOGIN</button>
+          <button class="login-button" onClick="displayActivityCard(event)">LOGIN</button>
         </form>
       </section>
     </article>
@@ -39,7 +45,7 @@
           <input maxlength="2" class="minutes-input input" type="text">
           <label class="seconds">Seconds</label>
           <input maxlength="2" class="seconds-input input" type="text" >
-          <button class="start-activity-button">START ACTIVITY</button>
+          <button class="start-activity-button" onClick="startActivity(event)">START ACTIVITY</button>
         </form>
       </section>
     </article>
@@ -51,14 +57,14 @@
           <p class="timer-text"><span class="minutes-text">05</span>:<span class="seconds-text">00</span></p>
         </div>
         <button class="timer-button">START</button>
-        <button class="log-activity-button">LOG ACTIVITY</button>
+        <button class="log-activity-button" onClick="logActivity()">LOG ACTIVITY</button>
       </section>
     </article>
     <article class="completed-activity hide">
       <h2>Completed Activity</h2>
       <section>
-        <button class="new-activity-button">CREATE A NEW ACTIVITY</button>
-        <button class="logout-button">LOGOUT</button>
+        <button class="new-activity-button" onClick="returnHome()">CREATE A NEW ACTIVITY</button>
+        <button class="logout-button" onClick="logout()">LOGOUT</button>
       </section>
     </article>
   <aside class="past-activity-article hide">

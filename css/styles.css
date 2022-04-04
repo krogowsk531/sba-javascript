@@ -4,11 +4,6 @@
   max-width: 100%;
 }
 
-body {
-  background-color: #2B2733;
-  min-width: 230px;
-}
-
 button {
   box-shadow: none;
   outline: none;
@@ -358,10 +353,6 @@ h3 {
 .password-answer {
   grid-area: 6 / 1 / 7 / 3;
   width: 100%;
-}
-
-.login-text {
-  font-size: 1.5em;
 }
 
 .login-button {

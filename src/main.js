@@ -1,5 +1,4 @@
 let loginCard = document.querySelector('.login-card-article');
-let loginButton = document.querySelector('.login-button');
 let pastActivitySection = document.querySelector('.past-activity-article');
 let activityCard = document.querySelector('.activity-card-article');
 let activityButtonContainer = document.querySelector('.activity-button-container');
@@ -15,27 +14,19 @@ let exerciseIconActive = document.querySelector('.exercise-icon-active');
 let intentionInformation = document.querySelector('.intention-answer')
 let minutesNumberOnly = document.querySelector('.minutes-input');
 let secondsNumberOnly = document.querySelector('.seconds-input');
-let startActivityButton = document.querySelector('.start-activity-button');
 let timerCard = document.querySelector('.timer-card-article');
 let userIntention = document.querySelector('.user-intention');
 let minutesText = document.querySelector('.minutes-text');
 let secondsText = document.querySelector('.seconds-text');
 let timerButton = document.querySelector('.timer-button');
-let logActivityButton = document.querySelector('.log-activity-button');
 let completedActivity = document.querySelector('.completed-activity');
-let newActivityButton = document.querySelector('.new-activity-button');
-let logoutButton = document.querySelector('.logout-button');
 let activityInformation = [];
 let selectedCategory;
 let tagColor;
 
-loginButton.addEventListener('click', displayActivityCard);
+
 activityButtonContainer.addEventListener('click', activityButton);
-startActivityButton.addEventListener('click', startActivity);
 timerButton.addEventListener('click', timerStart);
-logActivityButton.addEventListener('click', logActivity);
-newActivityButton.addEventListener('click', returnHome);
-logoutButton.addEventListener('click', logout);
 
 window.onload = retrieveFromStorage();
 window.onload = displayPastActivities();
